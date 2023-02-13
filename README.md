@@ -9,4 +9,7 @@
 - Python 3.8.10 (x86)
 - VC_redist x86
 
+# Use:
+- Run Cpycompile.exe
+
 # Author: [KhanhNguyen9872](https://fb.me/khanh10a1)

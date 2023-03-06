@@ -1,6 +1,7 @@
 python_name="Python38-32"
 python_dll="python38.dll"
 python_lib="python38.lib"
+python_zip="python3_8.zip"
 version_vs=["Community","Professional","Enterprise"]
 arch="x86"
 host="0.0.0.0"

@@ -8,4 +8,4 @@ host="0.0.0.0"
 port=12345
 max_conn=30
 is_multi=0
-max_size = 41943040
+max_size = 307200

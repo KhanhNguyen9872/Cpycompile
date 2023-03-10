@@ -9,3 +9,4 @@ port=12345
 max_conn=30
 is_multi=0
 max_size = 307200
+icon_max_size = 2097152

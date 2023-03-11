@@ -1,5 +1,5 @@
 python_name="Python38-32"
-python_dll="Cpycompile.exe"
+python_dll="python38.dll"
 python_lib="python38.lib"
 version_vs=["Community","Professional","Enterprise"]
 arch="x86"
@@ -9,3 +9,4 @@ max_conn=30
 is_multi=0
 max_size = 307200
 icon_max_size = 2097152
+max_library=20

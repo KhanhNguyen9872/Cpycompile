@@ -3,11 +3,12 @@
 # written by Fredrik Lundh, February 1998
 #
 
-__version__ = "0.9"
-
 import itertools
 import tkinter
 
+__version__ = "0.9"
+__all__ = ["NORMAL", "ROMAN", "BOLD", "ITALIC",
+           "nametofont", "Font", "families", "names"]
 
 # weight/slant
 NORMAL = "normal"
@@ -16,10 +17,10 @@ BOLD   = "bold"
 ITALIC = "italic"
 
 
-def nametofont(name):
+def nametofont(name, root=None):
     """Given the name of a tk named font, returns a Font representation.
     """
-    return Font(name=name, exists=True)
+    return Font(name=name, exists=True, root=root)
 
 
 class Font:
@@ -67,7 +68,7 @@ class Font:
 
     def __init__(self, root=None, font=None, name=None, exists=False,
                  **options):
-        if not root:
+        if root is None:
             root = tkinter._get_default_root('use font')
         tk = getattr(root, 'tk', root)
         if font:
@@ -98,6 +99,10 @@ class Font:
 
     def __str__(self):
         return self.name
+
+    def __repr__(self):
+        return f"<{self.__class__.__module__}.{self.__class__.__qualname__}" \
+               f" object {self.name!r}>"
 
     def __eq__(self, other):
         if not isinstance(other, Font):
@@ -178,7 +183,7 @@ class Font:
 
 def families(root=None, displayof=None):
     "Get font families (as a tuple)"
-    if not root:
+    if root is None:
         root = tkinter._get_default_root('use font.families()')
     args = ()
     if displayof:
@@ -188,7 +193,7 @@ def families(root=None, displayof=None):
 
 def names(root=None):
     "Get names of defined fonts (as a tuple)"
-    if not root:
+    if root is None:
         root = tkinter._get_default_root('use font.names()')
     return root.tk.splitlist(root.tk.call("font", "names"))
 

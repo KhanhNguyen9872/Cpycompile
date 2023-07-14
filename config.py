@@ -3,7 +3,7 @@
 # client.exe
 ip_client="127.0.0.1"
 port_client=12345
-max_time_client=300
+max_time_client=400
 
 # Cpycompile Server
 python_name="Python311-32"
